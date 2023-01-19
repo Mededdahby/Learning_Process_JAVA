@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="book1" class="Ex3.Book">
+    <constructor-arg name="title" value="title book 1"/>
+    <constructor-arg name="author" value="author 1"/>
+</bean>
+ <bean id="book2" class="Ex3.Book">
+     <constructor-arg name="title" value="title book 2"/>
+     <constructor-arg name="author" value="author 2"/>
+ </bean>
+
+    <bean id="reader1" class="Ex3.Reader">
+        <constructor-arg name="name" value="reader1"/>
+    </bean>
+    <bean id="reader2" class="Ex3.Reader">
+        <constructor-arg name="name" value="reader2"/>
+    </bean>
+
+    <bean id="library" class="Ex3.Library">
+        <property name="books">
+            <list>
+                <ref bean="book1"/>
+                <ref bean="book2"/>
+            </list>
+        </property>
+        <property name="readers">
+            <list>
+                <ref bean="reader1"/>
+                <ref bean="reader2"/>
+            </list>
+        </property>
+    </bean>
+</beans>
+
